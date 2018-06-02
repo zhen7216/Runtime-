@@ -13,6 +13,8 @@
 		888E3A2A20C2776C00D4601A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888E3A2920C2776C00D4601A /* Assets.xcassets */; };
 		888E3A2D20C2776C00D4601A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888E3A2B20C2776C00D4601A /* LaunchScreen.storyboard */; };
 		888E3A3020C2776C00D4601A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E3A2F20C2776C00D4601A /* main.m */; };
+		888E3A3C20C2809700D4601A /* screenShot.png in Resources */ = {isa = PBXBuildFile; fileRef = 888E3A3A20C2809700D4601A /* screenShot.png */; };
+		888E3A3D20C2809700D4601A /* log.png in Resources */ = {isa = PBXBuildFile; fileRef = 888E3A3B20C2809700D4601A /* log.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		888E3A2C20C2776C00D4601A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		888E3A2E20C2776C00D4601A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888E3A2F20C2776C00D4601A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		888E3A3A20C2809700D4601A /* screenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShot.png; sourceTree = "<group>"; };
+		888E3A3B20C2809700D4601A /* log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				888E3A2420C2776900D4601A /* ViewController.m */,
 				888E3A2620C2776900D4601A /* Main.storyboard */,
 				888E3A2920C2776C00D4601A /* Assets.xcassets */,
+				888E3A3B20C2809700D4601A /* log.png */,
+				888E3A3A20C2809700D4601A /* screenShot.png */,
 				888E3A2B20C2776C00D4601A /* LaunchScreen.storyboard */,
 				888E3A2E20C2776C00D4601A /* Info.plist */,
 				888E3A2F20C2776C00D4601A /* main.m */,
@@ -131,6 +137,8 @@
 				888E3A2D20C2776C00D4601A /* LaunchScreen.storyboard in Resources */,
 				888E3A2A20C2776C00D4601A /* Assets.xcassets in Resources */,
 				888E3A2820C2776900D4601A /* Main.storyboard in Resources */,
+				888E3A3C20C2809700D4601A /* screenShot.png in Resources */,
+				888E3A3D20C2809700D4601A /* log.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
