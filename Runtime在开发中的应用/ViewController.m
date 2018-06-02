@@ -8,15 +8,36 @@
 
 #import "ViewController.h"
 
+#import <objc/runtime.h>
+
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.textField.placeholder = @"Hello World";
+    
+    /*
+     应用一： 查看私有成员变量，并修改其值。（可以修改系统控件的某些属性）
+     
+     本示例目的：直接修改UITextField的placeholder字体的颜色.
+     */
+    
+    // 遍历UITextField对象，查找自己需要改变的成员变量
+    unsigned int count = 0;
+    Ivar *ivars = class_copyIvarList([UITextField class], &count);
+    for (int i = 0; i < count; i++) {
+        NSLog(@"成员变量：%s - 类型：%s", ivar_getName(ivars[i]), ivar_getTypeEncoding(ivars[i]));
+    }
+    
+    // 从打印结果中找到的目标：成员变量：_placeholderLabel - 类型：@"UITextFieldLabel"
+    // 使用KVC直接修改值
+    [self.textField setValue:[UIColor greenColor] forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 
