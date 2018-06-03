@@ -20,14 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self traversalPrivateIntanceVariable];
+}
+
+
+/*
+ 应用一： 查看私有成员变量，并修改其值。（可以修改系统控件的某些属性）
+ 
+ 本示例目的：直接修改UITextField的placeholder字体的颜色.
+ */
+- (void)traversalPrivateIntanceVariable {
     self.textField.placeholder = @"Hello World";
-    
-    /*
-     应用一： 查看私有成员变量，并修改其值。（可以修改系统控件的某些属性）
-     
-     本示例目的：直接修改UITextField的placeholder字体的颜色.
-     */
-    
     // 遍历UITextField对象，查找自己需要改变的成员变量
     unsigned int count = 0;
     Ivar *ivars = class_copyIvarList([UITextField class], &count);
@@ -39,7 +42,6 @@
     // 使用KVC直接修改值
     [self.textField setValue:[UIColor greenColor] forKeyPath:@"_placeholderLabel.textColor"];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
