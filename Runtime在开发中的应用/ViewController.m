@@ -20,7 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 应用一
     [self traversalPrivateIntanceVariable];
+    
+    // 应用二
+    [self methodExchange];
+    
 }
 
 
@@ -41,6 +46,22 @@
     // 从打印结果中找到的目标：成员变量：_placeholderLabel - 类型：@"UITextFieldLabel"
     // 使用KVC直接修改值
     [self.textField setValue:[UIColor greenColor] forKeyPath:@"_placeholderLabel.textColor"];
+}
+
+- (void)methodExchange {
+    Method method1 = class_getInstanceMethod([self class], @selector(method1));
+    Method method2 = class_getInstanceMethod([self class], @selector(method2));
+    method_exchangeImplementations(method1, method2);
+    
+    [self method1];
+}
+
+- (void)method1 {
+    NSLog(@"%s", __func__);
+}
+
+- (void)method2 {
+    NSLog(@"%s", __func__);
 }
 
 - (void)didReceiveMemoryWarning {
